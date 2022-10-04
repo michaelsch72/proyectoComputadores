@@ -1,10 +1,10 @@
-package com.mintic.ProyectoMintic;
+package mx.com.gm;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ProyectoMinticApplicationTests {
+class HolaSpringApplicationTests {
 
 	@Test
 	void contextLoads() {
