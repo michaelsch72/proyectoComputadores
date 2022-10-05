@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Agregar computador</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1> Agregar Computador</h1>
+        <a th:href="@{/}">Inicio</a><br>
+        <form th:action="@{/guardar}" method="post" th:object="${computer}">
+            <input type="hidden" name="Id" th:field="*{Id}">
+            <label for="brand">Brand</label>
+            <input type="text" for="brand" th:field="*{brand}"><br>
+              <label for="model">model</label>
+              <input type="text" for="model" th:field="*{model}"><br>
+               <label for="category_id">Category Id</label>
+               <input type="number" for="category_id" th:field="*{category_id}"><br>
+               <button type="submit" name="guardar" value="Guardar">Guardar</button>
+        </form>
+    </body>
+</html>

@@ -6,24 +6,32 @@
     </head>
     <body>
         <h1>Inicio</h1>
-        <div th:if="${personas != null and !personas.empty}">
+        <a th:href="@{/AgregarComputador}">Agregar Computador</a>
+        <a th:href="@{/Cliente}">Clientes</a>
+        <div th:if="${computadores != null and !computadores.empty}">
             <table border="1">
                 <tr>
                     <th>Brand</th>
                     <th>model</th>
                     <th>Category id</th>
-           
+
+
                 </tr>
-                <tr th:each="persona : ${personas}">
-                    <td th:text="${persona.brand}">Mostrar Nombre</td>
-                    <td th:text="${persona.model}">Mostrar Apellido</td>
-                    <td th:text="${persona.category_id}">Mostrar Email</td>
+                <tr th:each="computer : ${computadores}">
+                    <td th:text="${computer.brand}">Mostrar Nombre</td>
+                    <td th:text="${computer.model}">Mostrar Apellido</td>
+                    <td th:text="${computer.category_id}">Mostrar Email</td> 
+                    <td><a th:href="@{/editar/}+ ${computer.Id}"  th:text="Editar"></a></td>
+                    <td><a th:href="@{/eliminar/}+ ${computer.Id}"  th:text="Eliminar"></a></td>
+
                 </tr>
             </table>
         </div>
-        <div th:if="${personas == null or personas.empty}">
+        <div th:if="${computadores == null or computadores.empty}">
             La lista de personas está vacía
         </div>
-        
+           
     </body>
 </html>
+
+
