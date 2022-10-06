@@ -1,4 +1,4 @@
-package mx.com.gm;
+package ms.com.ch;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
