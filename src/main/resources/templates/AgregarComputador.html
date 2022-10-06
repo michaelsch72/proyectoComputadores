@@ -9,10 +9,19 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <title>Agregar computador</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
     </head>
     <body>
-        <h1> Agregar Computador</h1>
-        <a th:href="@{/}">Inicio</a><br>
+         <h1 class="navbar-brand-expand-sm bg-danger text-light">Alquiler Computadores</h1>
+         <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
+        <a th:href="@{/}" class="navbar-brand">Inicio</a><br>
+         </nav>
+          <div class="container border border-primary w-25">
+        <h1> Agregar cliente</h1>
+       
         <form th:action="@{/guardar}" method="post" th:object="${computer}">
             <input type="hidden" name="Id" th:field="*{Id}">
             <label for="brand">Brand</label>
@@ -21,7 +30,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
               <input type="text" for="model" th:field="*{model}"><br>
                <label for="category_id">Category Id</label>
                <input type="number" for="category_id" th:field="*{category_id}"><br>
-               <button type="submit" name="guardar" value="Guardar">Guardar</button>
+               <button type="submit" name="guardar" value="Guardar" class="btn btn-primary">Guardar</button>
         </form>
+         </div>
     </body>
 </html>

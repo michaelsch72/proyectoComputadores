@@ -3,20 +3,31 @@
     <head>
         <title>Inicio</title>
         <meta charset="UTF-8">
+        <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+        <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}"/>
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
     </head>
     <body>
-        <h1>Inicio</h1>
-        <a th:href="@{/}">Inicio</a><br>
-        <a th:href="@{/AñadirCliente}">Agregar Cliente</a>
+        <h1 class="navbar-brand-expand-sm bg-danger text-light">Alquiler Computadores</h1>
+         <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
+        <a th:href="@{/}" class="navbar-brand">Inicio</a><br>
+         </nav>
+        <div class="container">
+        <a th:href="@{/AñadirCliente}" class="btn btn-primary py-2 mb-3 ">Agregar Cliente</a>
         <div th:if="${client != null and !client.empty}">
-            <table border="1">
-                <tr>
-                    <th>Brand</th>
-                    <th>model</th>
-                    <th>Category id</th>
+            <table border="1" class="table table-stryped">
+                <thead  class="thead-dark">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
 
-
-                </tr>
+                    </tr>
+                </thead>
                 <tr th:each="client : ${client}">
                     <td th:text="${client.name}">Mostrar Nombre</td>
                     <td th:text="${client.email}">Mostrar Apellido</td>
@@ -24,14 +35,15 @@
                     <td><a th:href="@{/editarclient/}+ ${client.idcliente}"  th:text="Editar"></a></td>
                     <td><a th:href="@{/eliminarClient/}+ ${client.idcliente}"  th:text="Eliminar"></a></td>
 
-                    
+
                 </tr>
             </table>
+            </div>
         </div>
         <div th:if="${client == null or client.empty}">
             La lista de clientes esta vacia
         </div>
-           
+
     </body>
 </html>
 

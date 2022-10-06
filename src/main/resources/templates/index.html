@@ -3,20 +3,34 @@
     <head>
         <title>Inicio</title>
         <meta charset="UTF-8">
+        <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
     </head>
     <body>
-        <h1>Inicio</h1>
-        <a th:href="@{/AgregarComputador}">Agregar Computador</a>
-        <a th:href="@{/Cliente}">Clientes</a>
+        <h1 class="navbar-brand-expand-sm bg-danger text-light">Alquiler de computadores</h1>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
+          
+            <a th:href="@{/Cliente}" class="navbar-brand">Clientes</a>
+        </nav><br>
+        <!<!-- boton agregar --> 
+        <div class="container">
+         <a th:href="@{/AgregarComputador}" class="btn btn-primary py-2 mb-3 ">Agregar Computador</a>
         <div th:if="${computadores != null and !computadores.empty}">
-            <table border="1">
+            <table border="1" class="table table-stryped">
                 <tr>
+                <thead class="thead-dark">
                     <th>Brand</th>
                     <th>model</th>
                     <th>Category id</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
 
 
                 </tr>
+            </thead>
                 <tr th:each="computer : ${computadores}">
                     <td th:text="${computer.brand}">Mostrar Nombre</td>
                     <td th:text="${computer.model}">Mostrar Apellido</td>
@@ -27,10 +41,11 @@
                 </tr>
             </table>
         </div>
+        </div>
         <div th:if="${computadores == null or computadores.empty}">
             La lista de personas está vacía
         </div>
-           
+
     </body>
 </html>
 

@@ -8,20 +8,40 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+        <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}"/>
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
     </head>
     <body>
-        <a th:href="@{/}">Inicio</a><br>
-         <h1> Agregar cliente</h1>
-        
-        <form th:action="@{/guardarCliente}" method="post" th:object="${client}">
-            <input type="hidden" name="idCliente" th:field="*{idcliente}">
-            <label for="name">Name</label>
-            <input type="text" for="name" th:field="*{name}"><br>
-              <label for="email">Email</label>
-              <input type="text" for="email" th:field="*{email}"><br>
-               <label for="age">Age</label>
-               <input type="number" for="age" th:field="*{age}"><br>
-               <button type="submit" name="guardarCliente" value="guardarCliente">Guardar</button>
-        </form>
+        <h1 class="navbar-brand-expand-sm bg-danger text-light">Alquiler Computadores</h1>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
+            <a th:href="@{/}" class="navbar-brand">Inicio</a><br>
+        </nav>
+        <div class="container border border-primary w-25">
+        <h1> Agregar cliente</h1>
+       
+            <form th:action="@{/guardarCliente}" method="post" th:object="${client}">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" for="name" th:field="*{name}"><br>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" for="email" th:field="*{email}">
+
+               
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" for="age" th:field="*{age}">
+                </div>
+                <input type="hidden" name="idCliente" th:field="*{idcliente}">
+
+                <button type="submit" name="guardarCliente" value="guardarCliente" class="btn btn-primary ">Guardar</button>
+
+            </form>
+        </div>
     </body>
 </html>
