@@ -20,16 +20,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <a th:href="@{/}" class="navbar-brand">Inicio</a><br>
          </nav>
           <div class="container border border-primary w-25">
-        <h1> Agregar cliente</h1>
+              <h1 class="text-center"> Agregar Computador</h1>
        
         <form th:action="@{/guardar}" method="post" th:object="${computer}">
-            <input type="hidden" name="Id" th:field="*{Id}">
+            <input class="form-control" type="hidden" name="Id" th:field="*{Id}">
             <label for="brand">Brand</label>
-            <input type="text" for="brand" th:field="*{brand}"><br>
+            <input class="form-control" type="text" for="brand" th:field="*{brand}"><br>
               <label for="model">model</label>
-              <input type="text" for="model" th:field="*{model}"><br>
+              <input class="form-control" type="text" for="model" th:field="*{model}"><br>
                <label for="category_id">Category Id</label>
-               <input type="number" for="category_id" th:field="*{category_id}"><br>
+               <input class="form-control" type="number" for="category_id" th:field="*{category_id}"><br>
                <button type="submit" name="guardar" value="Guardar" class="btn btn-primary">Guardar</button>
         </form>
          </div>

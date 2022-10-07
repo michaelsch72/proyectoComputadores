@@ -10,7 +10,7 @@
 
     </head>
     <body>
-        <h1 class="navbar-brand-expand-sm bg-danger text-light">Alquiler de computadores</h1>
+        <h1 class="navbar-brand-expand-sm bg-warning  text-primary">Alquiler de computadores</h1>
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
           
             <a th:href="@{/Cliente}" class="navbar-brand">Clientes</a>
@@ -19,7 +19,7 @@
         <div class="container">
          <a th:href="@{/AgregarComputador}" class="btn btn-primary py-2 mb-3 ">Agregar Computador</a>
         <div th:if="${computadores != null and !computadores.empty}">
-            <table border="1" class="table table-stryped">
+            <table border="1" class="table table-stryped table-hover">
                 <tr>
                 <thead class="thead-dark">
                     <th>Brand</th>
